@@ -1,0 +1,18 @@
+{{template "base/head.html" .}}
+<div class="search">
+    <form class="search">
+      <input type="text" name="username" lay-verify="title" autocomplete="off" placeholder="{{.title}}" class="layui-input">
+      <div class="layui-btn icon"><i class="layui-icon layui-icon-search"></i></div>
+    </form>
+</div>
+
+<div class="list">
+	<div class="novel_list">
+		{{range .page.List}}
+		    <div class="novel_block">
+				<a href="{{.id}}">{{.name}}</a>
+			</div>
+		{{end}}
+	</div>
+</div>
+{{template "base/footer.html"}}

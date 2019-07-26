@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="shortcut icon" href="/static/img/favicon.png" />
+    <meta name="author" content="Unknown" />
+    <meta name="description" content="Beego sample app - Web IM" />
+    <meta name="keywords" content="Go, golang, beego, sample, Web IM">
+    <link href="/static/layui/css/layui.css" rel="stylesheet" />
+    <link href="/static/novel/css/style.css" rel="stylesheet" />
+    <script src="/static/layui/layui.js"></script>
+    <script>
+      layui.config({
+          base: '/static/novel/js/',
+      }).use(['globals']);
+    </script>
+	</head>
+	<body>
+    <div class="container">
+      <div class="header">{{.title}}</div>

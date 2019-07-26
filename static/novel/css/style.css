@@ -1,0 +1,25 @@
+.container{
+	width:100%;
+	margin:0 auto;
+}
+
+.search{
+	margin:10px 0;
+	padding:0 3px;
+	position:relative;
+}
+.search .icon{
+	position:absolute;
+    right: 3px;
+	top: 0;
+}
+
+
+.header{
+	background: #393D49;
+	color: #fff;
+	text-align: center;
+	height: 50px;
+	line-height: 50px;
+	font-size: 20px;
+}
