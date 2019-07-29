@@ -23,11 +23,15 @@ func (this *Page) PageUtil(count int, pageNo int, pageSize int, list []orm.Param
 	}
 	FirstPage := pageNo == 1
 	LastPage := pageNo == tp
-	
+
 	PreviousPage := 0
 	NextPage := 0
-	if(!FirstPage) PreviousPage = PageNo-1
-	if(!LastPage) NextPage = PageNo+1
-	
-	return Page{PageNo: pageNo, PageSize: pageSize, TotalPage: tp, TotalCount: count, FirstPage: FirstPage, LastPage: LastPage，PreviousPage:PreviousPage,NextPage:NextPage, List: list}
+	if !FirstPage {
+		PreviousPage = pageNo - 1
+	}
+
+	if !LastPage {
+		NextPage = pageNo + 1
+	}
+	return Page{PageNo: pageNo, PageSize: pageSize, TotalPage: tp, TotalCount: count, FirstPage: FirstPage, LastPage: LastPage, PreviousPage: PreviousPage, NextPage: NextPage, List: list}
 }

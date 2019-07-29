@@ -1,7 +1,7 @@
 package main
 
 import (
-	_ "mybee/routers"
+	_ "novel/routers"
 
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
@@ -11,7 +11,6 @@ import (
 
 func main() {
 	orm.Debug = true
-
 	orm.RegisterDriver("mysql", orm.DRMySQL)
 	dsn := beego.AppConfig.String("mysqluser") + ":" + beego.AppConfig.String("mysqlpass") + "@tcp(" + beego.AppConfig.String("mysqlurls") + ")/" + beego.AppConfig.String("mysqldb") + "?charset=utf8"
 	orm.RegisterDataBase("default", "mysql", dsn)

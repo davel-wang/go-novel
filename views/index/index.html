@@ -1,18 +1,25 @@
 {{template "base/head.html" .}}
 <div class="search">
     <form class="search">
-      <input type="text" name="username" lay-verify="title" autocomplete="off" placeholder="{{.title}}" class="layui-input">
-      <div class="layui-btn icon"><i class="layui-icon layui-icon-search"></i></div>
+        <input type="text" name="username" lay-verify="title" autocomplete="off" placeholder="{{.title}}" class="layui-input">
+        <div class="layui-btn icon"><i class="layui-icon layui-icon-search"></i></div>
     </form>
 </div>
-
 <div class="list">
-	<div class="novel_list">
-		{{range .page.List}}
-		    <div class="novel_block">
-				<a href="{{.id}}">{{.name}}</a>
-			</div>
-		{{end}}
-	</div>
+    <div class="novel_list">
+        {{range .page.List}}
+        <div class="novel_block">
+            <a href="/book/{{.id}}/1">{{.name}}</a>
+        </div>
+        {{end}}
+        <div class="page">
+            {{if .Page.PreviousPage gt 0 }}
+            <a href="/index/{{.Page.PreviousPage}}">上一页</a>
+            {{end}}
+            {{if .Page.NextPage gt 0 }}
+            <a href="/index/{{.Page.NextPage}}">下一页</a>
+            {{end}}
+        </div>
+    </div>
 </div>
 {{template "base/footer.html"}}

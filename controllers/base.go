@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	// "fmt"
 	"strings"
 
 	"github.com/astaxie/beego"
@@ -48,7 +49,7 @@ func (this *baseController) getPage() (int, int) {
 		page_max = 1000
 	}
 
-	page, err := this.GetInt("page")
+	page, err := this.GetInt(":page")
 	if err != nil {
 		page = 1
 	} else {

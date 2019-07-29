@@ -1,0 +1,19 @@
+{{template "base/head.html" .}}
+<div class="list">
+    <div class="novel_list">
+        {{range .page.List}}
+        <div class="novel_block">
+            <a href="/book/{{.book_id}}/info/{.id}">{{.title}}</a>
+        </div>
+        {{end}}
+        <div class="page">
+            {{if .Page.PreviousPage gt 0 }}
+            <a href="/index/{{.Page.PreviousPage}}">上一页</a>
+            {{end}}
+            {{if .Page.NextPage gt 0 }}
+            <a href="/index/{{.Page.NextPage}}">下一页</a>
+            {{end}}
+        </div>
+    </div>
+</div>
+{{template "base/footer.html"}}

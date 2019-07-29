@@ -15,10 +15,6 @@ type Books struct {
 	Views     int
 }
 
-func init() {
-	orm.RegisterModel(new(Books))
-}
-
 func (this *Books) ListPage(page int, numPerPage int) Page {
 	var pages Page
 
@@ -38,4 +34,16 @@ func (this *Books) ListPage(page int, numPerPage int) Page {
 
 	number, err := strconv.Atoi(maps2[0]["number"].(string))
 	return pages.PageUtil(number, page, numPerPage, maps)
+}
+
+func (this *Books) ReadBook(book_id int) Books {
+	o := orm.NewOrm()
+	books := Books{Id: book_id}
+
+	_ = o.Read(&books)
+	return books
+}
+
+func init() {
+	orm.RegisterModel(new(Books))
 }
